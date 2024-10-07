@@ -1,0 +1,65 @@
+first_input = str(input("type two arguments: "))
+#upper_input = str(input).upper()
+x=0
+
+key1 = []
+key2 = []
+
+x=0
+while len(key1)<len(first_input):
+    if first_input[x] == " ":
+        break
+    key1.append(first_input[x])
+    #print(x)
+    print(key1)
+    x=x+1
+
+print(x)
+cont = True
+
+if len(key1)==len(first_input):
+    print("USAGE: welcome.py characters replacements")
+    cont = False
+elif (len(key1)*2+1) !=len(first_input):
+    print("ERROR: Arguments must be the same length.")
+    cont = False
+
+i = len(key1)+1
+print("i=", i)
+while cont==True and i<(2*len(key1)+1):
+    key2.append(first_input[i])
+    #print(i)
+    print(key2)
+    i = i+1
+
+
+second_input = input("Sentence: ")
+second_input = str(second_input)
+sen = []
+a=0
+
+while len(sen)<len(second_input):
+    sen.append(second_input[a])
+    print("sen: ",sen," a:", a)
+    a=a+1
+    
+k1n = 0 #index of item in key1
+while k1n < len(key1):
+    sn=0
+    while sn<len(sen):
+        if sen[sn] == key1[k1n]:
+            sen[sn] = key2[k1n]
+            print(sn, k1n, "p1")
+        else: sn = sn+1
+        print(sn, k1n, "sen: ",sen, "p2")
+    print(sn, k1n, "p3")
+    k1n = k1n+1
+   
+output = ""         
+for p in sen:
+    output = output + p
+print(output)
+    
+
+            
+        
